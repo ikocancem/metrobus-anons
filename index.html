@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Metrobüs Anons & Takip Sistemi</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Dynamic SEO Metas -->
+  <meta name="description" content="Yolcular için geliştirilmiş mobil uyumlu metrobüs anons ve takip sistemi. Kulaklığınızdan durakları takip edin, alarm kurun, durağı kaçırmayın.">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header>
+      <div class="logo-section">
+        <div class="logo-icon">M</div>
+        <h1>Metrobüs Anons</h1>
+      </div>
+      <div id="gps-indicator" class="gps-indicator">
+        <span class="gps-dot"></span>
+        <span id="gps-text">GPS Çevrimdışı</span>
+      </div>
+    </header>
+
+    <!-- Simulated GPS Accuracy Warning Banner -->
+    <div id="accuracy-banner" class="accuracy-banner">
+      GPS Sinyali Zayıf! Duraklar manuel olarak güncellenebilir.
+    </div>
+
+    <!-- LED Screen Panel -->
+    <div class="led-screen-wrapper">
+      <div class="led-screen">
+        <div class="led-header">
+          <span id="led-time">18:52</span>
+          <span id="led-speed">0 km/s</span>
+          <span id="led-temp">26°C</span>
+        </div>
+        <div class="led-main">
+          <span id="led-label" class="led-label">Sıradaki İstasyon</span>
+          <div id="led-station" class="led-station">Lütfen Hat Seçin</div>
+        </div>
+        <div class="led-info-scroller">
+          <span id="led-info-text" class="led-info-text">Metrobüs Anons Sistemine Hoş Geldiniz. Kulaklığınızı takıp anonsları dinleyebilirsiniz.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Settings and Config Panel -->
+    <div class="config-panel">
+      <!-- Hat & Yön Seçimi -->
+      <div class="panel-card">
+        <div class="panel-title">
+          <span class="btn-icon">🗺️</span> Yolculuk Bilgileri
+        </div>
+        <div class="row-inputs">
+          <div class="input-group">
+            <label for="route-select">Metrobüs Hattı</label>
+            <select id="route-select">
+              <option value="34G">34G (Beylikdüzü - S.Çeşme)</option>
+              <option value="34AS">34AS (Avcılar - S.Çeşme)</option>
+              <option value="34BZ">34BZ (Beylikdüzü - Zincirlikuyu)</option>
+              <option value="34C">34C (Beylikdüzü - Cevizlibağ)</option>
+              <option value="34">34 (Avcılar - Zincirlikuyu)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="direction-select">Gidiş Yönü</label>
+            <select id="direction-select">
+              <option value="west">Beylikdüzü Yönü</option>
+              <option value="east">Söğütlüçeşme Yönü</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Mode Toggles -->
+        <div class="control-grid">
+          <button id="btn-gps-mode" class="btn btn-success">
+            <span class="btn-icon">🛰️</span> GPS Takibi
+          </button>
+          <button id="btn-manual-mode" class="btn btn-success active">
+            <span class="btn-icon">🖐️</span> Manuel Mod
+          </button>
+        </div>
+      </div>
+
+      <!-- Manuel Sürüş Kontrolleri (Always visible for override, very practical!) -->
+      <div class="panel-card" id="manual-controls-panel">
+        <div class="panel-title">
+          <span class="btn-icon">🎮</span> Durak Kontrolleri (Manuel)
+        </div>
+        <div class="control-grid">
+          <button id="btn-prev-station" class="btn">
+            <span class="btn-icon">⏮️</span> Önceki Durak
+          </button>
+          <button id="btn-next-station" class="btn btn-primary">
+            <span class="btn-icon">⏭️</span> Sonraki Durak
+          </button>
+        </div>
+        <div class="control-grid">
+          <button id="btn-next-announcement" class="btn" style="background: rgba(255, 159, 0, 0.08); border-color: rgba(255, 159, 0, 0.2); color: var(--led-amber);">
+            <span class="btn-icon">📢</span> Sıradaki İstasyon Anonsu
+          </button>
+          <button id="btn-arrive-station" class="btn" style="background: rgba(255, 107, 0, 0.08); border-color: rgba(255, 107, 0, 0.2); color: var(--accent-orange);">
+            <span class="btn-icon">🔔</span> İstasyona Varış Anonsu
+          </button>
+        </div>
+      </div>
+
+      <!-- Alarm & Bildirim Ayarları -->
+      <div class="panel-card">
+        <div class="panel-title">
+          <span class="btn-icon">⏰</span> İneceğim Durak Alarmı
+        </div>
+        <div class="input-group" style="margin-bottom: 12px;">
+          <label for="alarm-station-select">Uyarılmak İstediğiniz Durak</label>
+          <select id="alarm-station-select">
+            <option value="">-- Durak Seçin --</option>
+            <!-- Will be populated dynamically in app.js -->
+          </select>
+        </div>
+        
+        <!-- Active Alarm Display -->
+        <div id="active-alarm-box" class="alert-box" style="display: none;">
+          <div class="alert-bell">🔔</div>
+          <div class="alert-info">
+            <p id="alarm-status-text">Alarm kuruldu!</p>
+            <span>Durak yaklaşırken sesli/titreşimli uyarı alacaksınız.</span>
+          </div>
+          <button id="btn-cancel-alarm" class="btn-cancel-alert" title="Alarmı İptal Et">✖</button>
+        </div>
+
+        <div class="settings-toggle-row">
+          <div class="toggle-label">
+            <span>Kulaklık / Orijinal Anons Sesleri</span>
+            <small>YouTube üzerinden gerçek kayıtları çalar</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-audio-source" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="settings-toggle-row">
+          <div class="toggle-label">
+            <span>Telefon Titreşim Uyarısı</span>
+            <small>Durağa gelince telefonu titretir</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="toggle-vibration" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline / Stations List -->
+    <div class="tracker-panel">
+      <div class="panel-card timeline-card">
+        <div class="panel-title" style="margin-bottom: 0;">
+          <span class="btn-icon">🚏</span> İstasyon Listesi (<span id="station-count">0</span> Durak)
+        </div>
+        <div id="stations-list" class="stations-list">
+          <!-- Populated dynamically in app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden Container for YouTube Player -->
+  <div id="youtube-player-container">
+    <div id="yt-player"></div>
+  </div>
+
+  <!-- Fullscreen Destination Alarm Modal -->
+  <div id="destination-modal" class="destination-modal">
+    <div class="modal-content">
+      <div class="modal-icon">🚨</div>
+      <div class="modal-title">İneceğiniz Durağa Geldiniz!</div>
+      <div id="modal-station-name" class="modal-text">Zincirlikuyu</div>
+      <div class="modal-text" style="font-size: 15px; color: var(--text-secondary);">Metrobüsten inmek için hazırlık yapabilirsiniz.</div>
+      <button id="btn-close-modal" class="modal-btn">Anladım, Alarmı Kapat</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="station_data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
