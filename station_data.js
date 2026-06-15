@@ -7,7 +7,7 @@ window.STATIONS = [
     name: "Söğütlüçeşme",
     lat: 40.9912,
     lon: 29.0375,
-    transfers: ["Marmaray", "YHT (Yüksek Hızlı Tren)", "İETT Otobüsleri"],
+    transfers: ["Marmaray", "YHT (Yüksek Hızlı Tren)"],
     videoIdArrival: "2qh91Fni13g", // Metrobüs Söğütlüçeşme anonsu
     videoIdNext: "elg1azxLAf8" // Metrobüs Söğütlüçeşme gelecek istasyon anonsu (when leaving Söğütlüçeşme)
   },
@@ -25,7 +25,7 @@ window.STATIONS = [
     name: "Uzunçayır",
     lat: 40.9984,
     lon: 29.0558,
-    transfers: ["M4 Metro Hattı (Kadıköy-Sabiha Gökçen)", "İETT Otobüsleri"],
+    transfers: ["M4 Metro Hattı (Kadıköy-Sabiha Gökçen)],
     videoIdArrival: "wvgngtggQh8", // Metrobüs Uzunçayır anonsu
     videoIdNext: "Wd45ZtVw5Zg" // Metrobüs Uzunçayır gelecek istasyon anonsu
   },
@@ -34,7 +34,7 @@ window.STATIONS = [
     name: "Acıbadem",
     lat: 41.0041,
     lon: 29.0526,
-    transfers: ["İETT Otobüsleri"],
+    transfers: [],
     videoIdArrival: "o4iW7u5nh2Y", // Metrobüs Acıbadem anonsu
     videoIdNext: "GELO-6TdDk4" // Metrobüs Acıbadem gelecek istasyon anonsu
   },
@@ -43,7 +43,7 @@ window.STATIONS = [
     name: "Altunizade",
     lat: 41.0211,
     lon: 29.0308,
-    transfers: ["M5 Metro Hattı (Üsküdar-Çekmeköy)", "Şehir İçi Otobüsler"],
+    transfers: ["M5 Metro Hattı (Üsküdar-Çekmeköy)"],
     videoIdArrival: "oEGBcePnEI8", // Metrobüs Altunizade anonsu
     videoIdNext: "hSRJ6U0mA_E" // Metrobüs Altunizade gelecek istasyon anonsu
   },
@@ -61,7 +61,7 @@ window.STATIONS = [
     name: "15 Temmuz Şehitler Köprüsü",
     lat: 41.0360,
     lon: 29.0364,
-    transfers: ["Köprü Bağlantı Otobüsleri"],
+    transfers: [],
     videoIdArrival: "QVbZmMiSpcQ", // Metrobüs 15 Temmuz Şehitler Köprüsü anonsu
     videoIdNext: "5YmS-d5QwTQ" // Metrobüs 15 Temmuz Şehitler Köprüsü gelecek istasyon anonsu
   },
@@ -70,7 +70,7 @@ window.STATIONS = [
     name: "Zincirlikuyu",
     lat: 41.0674,
     lon: 29.0118,
-    transfers: ["M2 Metro Hattı", "M11 İstanbul Havalimanı Metrosu", "Şehir İçi Otobüsler"],
+    transfers: ["M2 Metro Hattı", "M11 İstanbul Havalimanı Metrosu"],
     videoIdArrival: "roGDBEMUvLA", // Metrobüs Zincirlikuyu anonsu
     videoIdNext: "TUmAdMJhR0s" // Metrobüs Zincirlikuyu gelecek istasyon anonsu
   },
@@ -79,16 +79,16 @@ window.STATIONS = [
     name: "Mecidiyeköy",
     lat: 41.0631,
     lon: 28.9928,
-    transfers: ["M2 Metro Hattı", "M7 Metro Hattı (Mecidiyeköy-Mahmutbey)", "İETT Otobüsleri"],
+    transfers: ["M2 Metro Hattı", "M7 Metro Hattı (Mecidiyeköy-Mahmutbey)"],
     videoIdArrival: "sUGeV6dlGwY", // Metrobüs Mecidiyeköy anonsu
     videoIdNext: "CQGyFsjxOos" // Metrobüs Mecidiyeköy gelecek istasyon anonsu
   },
   {
     id: 10,
-    name: "Çağlayan",
+    name: "Çağlayan(Adliye)",
     lat: 41.0664,
     lon: 28.9804,
-    transfers: ["Çağlayan Adliyesi"],
+    transfers: [],
     videoIdArrival: "z79LclTebTU", // Metrobüs Çağlayan anonsu
     videoIdNext: "wLwrsQckW7U" // Metrobüs Çağlayan gelecek istasyon anonsu
   },
@@ -106,7 +106,7 @@ window.STATIONS = [
     name: "Darülaceze - Perpa",
     lat: 41.0628,
     lon: 28.9610,
-    transfers: ["Perpa Ticaret Merkezi", "Darülaceze"],
+    transfers: [],
     videoIdArrival: "xxXcSKRBbw4", // Metrobüs Darülaceze - Perpa anonsu
     videoIdNext: "0N75EbVrosU" // Metrobüs Darülaceze - Perpa gelecek istasyon anonsu
   },
@@ -124,7 +124,7 @@ window.STATIONS = [
     name: "Halıcıoğlu",
     lat: 41.0521,
     lon: 28.9427,
-    transfers: ["Haliç Şehir Hatları İskelesi (yürüme mesafesi)"],
+    transfers: [],
     videoIdArrival: null, // Oynatma listesinde eksik (falls back to Speech Synthesis)
     videoIdNext: "wHId5jw5mR8" // Metrobüs Halıcıoğlu gelecek istasyon anonsu
   },
@@ -214,7 +214,7 @@ window.STATIONS = [
     name: "Şirinevler",
     lat: 40.9912,
     lon: 28.8475,
-    transfers: ["M1A Metro Hattı", "Otobüs & Minibüs Durakları"],
+    transfers: ["M1A Metro Hattı"],
     videoIdArrival: "Dy8_8zC4gyw", // Metrobüs Şirinevler anonsu
     videoIdNext: "8DCuufPqcC0" // Metrobüs Şirinevler gelecek istasyon anonsu
   },
@@ -232,7 +232,7 @@ window.STATIONS = [
     name: "Sefaköy",
     lat: 40.9902,
     lon: 28.7998,
-    transfers: ["Otobüs Peronları"],
+    transfers: [],
     videoIdArrival: "aRIREXY40wM", // Metrobüs Sefaköy anonsu
     videoIdNext: "e518LOfddAQ" // Metrobüs Sefaköy gelecek istasyon anonsu
   },
@@ -277,7 +277,7 @@ window.STATIONS = [
     name: "İBB Sosyal Tesisleri",
     lat: 40.9798,
     lon: 28.7392,
-    transfers: ["Avcılar Sahil Parkı Bağlantısı"],
+    transfers: [],
     videoIdArrival: "JU_Z3E5o58I", // Metrobüs İBB Sosyal Tesisleri anonsu
     videoIdNext: "FNYvy5i6KOo" // Metrobüs İBB Sosyal Tesisleri gelecek istasyon anonsu
   },
@@ -295,7 +295,7 @@ window.STATIONS = [
     name: "Avcılar Merkez Üniversite Kampüsü",
     lat: 40.9808,
     lon: 28.7188,
-    transfers: ["İstanbul Üniversitesi-Cerrahpaşa Avcılar Kampüsü", "Ring Otobüsler"],
+    transfers: [],
     videoIdArrival: "EmIZPD6-efw", // Metrobüs Avcılar Merkez Üni. Kampüsü anonsu
     videoIdNext: "7SEel0j30zk" // Metrobüs Avcılar Merkez gelecek istasyon anonsu
   },
