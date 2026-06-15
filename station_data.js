@@ -10,6 +10,8 @@ window.STATIONS = [
     transfers: ["Marmaray", "YHT (Yüksek Hızlı Tren)"],
     videoIdArrival: "2qh91Fni13g", // Metrobüs Söğütlüçeşme anonsu
     videoIdNext: "elg1azxLAf8" // Metrobüs Söğütlüçeşme gelecek istasyon anonsu (when leaving Söğütlüçeşme)
+    audioArrival: "metrobus_sogutlucesme_anonsu.mp3",
+    audioNext: "metrobus_sogutlucesme_gelecek_istasyon_anonsu.mp3",
   },
   {
     id: 2,
