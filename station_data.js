@@ -367,7 +367,7 @@ window.STATIONS = [
     name: "Beylikdüzü Belediye",
     lat: 41.0188,
     lon: 28.6368,
-    transfers: ["Beylikdüzü Belediyesi"],
+    transfers: [],
     videoIdArrival: "lgvBnaBQwl0", // Metrobüs Beylikdüzü Belediye anonsu
     videoIdNext: "AenJuXeIq9E" // Metrobüs Beylikdüzü Belediye gelecek istasyon anonsu
   },
@@ -391,10 +391,10 @@ window.STATIONS = [
   },
   {
     id: 45, // Wait, changed index to 45 so we keep the exact array items
-    name: "Beylikdüzü Son Durak",
+    name: "Beylikdüzü Son Durak(TÜYAP)",
     lat: 41.0172,
     lon: 28.6258,
-    transfers: ["TÜYAP Fuar ve Kongre Merkezi", "Otobüs Peronları"],
+    transfers: [],
     videoIdArrival: "jR0eIammQDg", // Metrobüs Beylikdüzü Son Durak anonsu
     videoIdNext: null
   }
