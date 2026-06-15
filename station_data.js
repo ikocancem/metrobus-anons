@@ -25,7 +25,7 @@ window.STATIONS = [
     name: "Uzunçayır",
     lat: 40.9984,
     lon: 29.0558,
-    transfers: ["M4 Metro Hattı (Kadıköy-Sabiha Gökçen)],
+    transfers: ["M4 Metro Hattı (Kadıköy-Sabiha Gökçen)"],
     videoIdArrival: "wvgngtggQh8", // Metrobüs Uzunçayır anonsu
     videoIdNext: "Wd45ZtVw5Zg" // Metrobüs Uzunçayır gelecek istasyon anonsu
   },
