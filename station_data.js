@@ -190,8 +190,8 @@ window.STATIONS = [
     lat: 41.0049,
     lon: 28.8872,
     transfers: ["M1A Metro Hattı", "T1 Tramvay Hattı"],
-    videoIdArrival: "8_8OrhT5DFw", // Metrobüs Zeytinburnu anonsu
-    videoIdNext: "cj-jCsGmQaI" // Metrobüs Zeytinburnu gelecek istasyon anonsu
+    videoIdArrival: "8hKTbBczZYU", // Metrobüs Zeytinburnu anonsu
+    videoIdNext: "uUfJQrkr5Xk" // Metrobüs Zeytinburnu gelecek istasyon anonsu
   },
   {
     id: 22,
