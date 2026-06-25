@@ -398,7 +398,7 @@ window.STATIONS = [
     lon: 28.6258,
     transfers: [],
     videoIdArrival: "jR0eIammQDg", // Metrobüs Beylikdüzü Son Durak anonsu
-    videoIdNext: null
+    videoIdNext: "7Lt1cOT4R0A"
   }
 ];
 
