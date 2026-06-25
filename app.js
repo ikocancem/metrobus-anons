@@ -456,14 +456,20 @@ function handleGpsUpdate(position) {
     
     if (minDistance <= 120) {
       // We are AT the closest station
-      if (state.currentIndex !== closestStationIndex || !state.isArrivalPhase) {
+  if (state.currentIndex !== closestStationIndex || !state.isArrivalPhase) {
         state.currentIndex = closestStationIndex;
         state.isArrivalPhase = true;
-        updateLedScreen();
-        renderTimeline();
+        
+        // Anons ve alarm sadece İLK GİRİŞTE bir kez çalmalı
         triggerAnnouncement();
         checkDestinationAlarm();
-      }
+    }
+
+    // Ekran güncellemeleri dışarıda kalıyor, GPS her taze sinyal verdiğinde yenileniyor
+    if (state.isArrivalPhase) {
+        updateLedScreen();
+        renderTimeline();
+    }
     } else {
       // In transit
       // If we are closest to station S but outside 120m, check direction
